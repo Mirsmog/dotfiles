@@ -1,0 +1,125 @@
+{
+    "remote.SSH.remotePlatform": {
+        "195.2.80.238": "linux"
+    },
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
+
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    
+    "workbench.colorTheme": "Horizon Italic",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.neovimUseConfigFile": true,
+    "vim.neovimPath": "C:\\Program Files\\Neovim\\bin\\nvim.exe",
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDelete": false,
+    "window.zoomLevel": 1,
+    "files.autoSave": "onFocusChange",
+    "typescript.suggest.completeFunctionCalls": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.activityBar.visible": false,
+    "window.menuBarVisibility": "compact",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Arch (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Arch"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Arch (WSL)",
+    "vscode-pets.theme": "forest",
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "html-css-class-completion.enableScssFindUsage": true,
+    "html-css-class-completion.enableEmmetSupport": true,
+    "html-css-class-completion.enableFindUsage": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cssPeek.peekFromLanguages": [
+        "html",
+        "django-html",
+        "laravel-blade",
+        "razor",
+        "vue",
+        "blade",
+        "pug",
+        "jade",
+        "handlebars",
+        "php",
+        "twig",
+        "md",
+        "nunjucks",
+        "javascript",
+        "javascriptreact",
+        "erb",
+        "typescript",
+        "typescriptreact",
+        "HTML (Eex)",
+        "html-eex",
+        "ejs",
+        "hbs",
+        "svelte",
+        "tsx",
+        "jsx"
+    ],
+    "html-to-css-autocompletion.getSelectorsFromFileTypes": [
+
+        "html",
+        "php",
+        "tsx",
+        "jsx"
+    ],
+    "html-css-class-completion.HTMLLanguages": [
+
+        "html",
+        "tsx",
+        "jsx",
+        "vue",
+        "razor",
+        "blade",
+        "handlebars",
+        "twig",
+        "django-html",
+        "php",
+        "markdown",
+        "erb",
+        "ejs",
+        "svelte"
+    ],
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.sideBar.location": "right",
+    "editor.glyphMargin": false,
+    "editor.folding": false,
+    "workbench.editor.showTabs": false,
+    "breadcrumbs.enabled": false,
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "window.titleBarStyle": "custom"
+
+
+}
