@@ -11,3 +11,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Load .bashrc for interactive shells
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+. "$HOME/.cargo/env"
