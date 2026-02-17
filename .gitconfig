@@ -1,0 +1,27 @@
+[user]
+	name = Timur
+	email = tanharka.tyuchiev4@mail.ru
+
+[init]
+	defaultBranch = main
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[core]
+	editor = nvim
+
+[pull]
+	rebase = false
+
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	cm = commit
+	lg = log --graph --oneline --decorate --all
