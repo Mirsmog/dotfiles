@@ -59,6 +59,19 @@ for file in "${FILES[@]}"; do
     create_symlink "$file"
 done
 
+# Starship config
+echo ""
+echo "Setting up starship config..."
+mkdir -p "$HOME/.config"
+src="$DOTFILES_DIR/.config/starship.toml"
+dst="$HOME/.config/starship.toml"
+if [ -f "$src" ]; then
+    [ -e "$dst" ] && [ ! -L "$dst" ] && mkdir -p "$BACKUP_DIR" && mv "$dst" "$BACKUP_DIR/starship.toml"
+    [ -L "$dst" ] && rm "$dst"
+    ln -s "$src" "$dst"
+    echo -e "${GREEN}[OK]${NC} $dst -> $src"
+fi
+
 # Create scripts directory and symlinks
 echo ""
 echo "Setting up scripts..."
