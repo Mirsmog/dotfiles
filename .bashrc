@@ -8,7 +8,7 @@
 # ==============================================
 # Locale
 # ==============================================
-export LANG=C.UTF-8
+export LANG=en_US.UTF-8
 
 # ==============================================
 # Bash Completion
@@ -144,15 +144,15 @@ clone-repo() {
 bind -x '"\C-g": clone-repo'
 
 # ==============================================
-# Auto-start tmux
+# Auto-start tmux (disabled - using rustui)
 # ==============================================
-if command -v tmux >/dev/null 2>&1; then
-  if [ -z "$TMUX" ]; then
-    if tmux has-session -t main 2>/dev/null; then
-      exec tmux attach -t main
-    else
-      exec tmux new -s main
-    fi
-  fi
-fi
+ if command -v tmux >/dev/null 2>&1; then
+   if [ -z "$TMUX" ]; then
+     if tmux has-session -t main 2>/dev/null; then
+       exec tmux attach -t main
+     else
+       exec tmux new -s main
+     fi
+   fi
+ fi
 . "$HOME/.cargo/env"
