@@ -1,0 +1,10 @@
+# chezmoi config template
+# Runs once on `chezmoi init` to generate ~/.config/chezmoi/chezmoi.toml
+
+[data]
+    name         = {{ promptStringOnce . "name"         "Full name"                      | quote }}
+    email        = {{ promptStringOnce . "email"        "Email"                          | quote }}
+    # Machine role: "home", "work", "server"
+    role         = {{ promptStringOnce . "role"         "Machine role (home/work/server)" | quote }}
+    # Machine type: "laptop", "desktop"
+    machine_type = {{ promptStringOnce . "machine_type" "Machine type (laptop/desktop)"  | quote }}

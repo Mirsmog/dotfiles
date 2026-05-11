@@ -1,0 +1,109 @@
+#
+# ~/.bashrc — {{ .chezmoi.hostname }} ({{ .role }})
+# managed by chezmoi
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# ==============================================
+# Locale
+# ==============================================
+export LANG=en_US.UTF-8
+
+# ==============================================
+# Bash Completion
+# ==============================================
+if [ -r /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+elif [ -r /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+# ==============================================
+# FZF (fuzzy finder)
+# ==============================================
+if [ -r /usr/share/fzf/key-bindings.bash ]; then
+  . /usr/share/fzf/key-bindings.bash
+fi
+if [ -r /usr/share/fzf/completion.bash ]; then
+  . /usr/share/fzf/completion.bash
+fi
+
+# ==============================================
+# History
+# ==============================================
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# ==============================================
+# Basic Aliases
+# ==============================================
+alias cls='clear'
+alias vi='nvim'
+alias reload='source ~/.bashrc'
+alias grep='grep --color=auto'
+alias cop='copilot --allow-all-tools'
+alias pc='ssh -t pc "tmux -u attach || tmux -u new -s main"'
+
+# ==============================================
+# Prompt
+# ==============================================
+PS1='[\u@\h \W]\$ '
+
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init bash)"
+fi
+
+# ==============================================
+# Zoxide (smart cd)
+# ==============================================
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init bash --cmd z)"
+fi
+
+# ==============================================
+# PATH
+# ==============================================
+export PATH="$HOME/.local/bin:$PATH"
+
+{{- if eq .role "work" }}
+
+# ==============================================
+# Work-specific
+# ==============================================
+export HTTP_PROXY=http://proxy:8080
+export HTTPS_PROXY=http://proxy:8080
+export NO_PROXY=localhost,127.0.0.1
+{{- end }}
+
+# ==============================================
+# Load Additional Configs
+# ==============================================
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -f ~/.secrets ]      && . ~/.secrets
+[ -f ~/.bashrc.local ] && . ~/.bashrc.local
+
+# ==============================================
+# Auto-start tmux (skip on tty1 where niri launches)
+# ==============================================
+{{- if ne .role "server" }}
+if command -v tmux >/dev/null 2>&1; then
+  if [ -z "$TMUX" ] && [ "$(tty)" != "/dev/tty1" ]; then
+    if tmux has-session -t main 2>/dev/null; then
+      exec tmux attach -t main
+    else
+      exec tmux new -s main
+    fi
+  fi
+fi
+{{- end }}
+
+# ==============================================
+# xbps aliases (Void Linux)
+# ==============================================
+alias xleb='sudo xbps-install -S'
+alias xlebi='sudo xbps-install -S'
+alias xlebr='sudo xbps-remove -R'
+alias xlebq='xbps-query -Rs'
+alias xlebu='sudo xbps-install -Su'

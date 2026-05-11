@@ -1,0 +1,136 @@
+# Void Linux color theme for yazi 26.x
+# Matches ghostty void theme palette
+
+[mgr]
+cwd = { fg = "#6a9fb5" }
+
+find_keyword  = { fg = "#d7af5f", bold = true, italic = true }
+find_position = { fg = "#a57fc4", bold = true }
+
+symlink_target = { italic = true }
+
+marker_copied   = { fg = "#d7af5f", bg = "#d7af5f" }
+marker_cut      = { fg = "#cc6666", bg = "#cc6666" }
+marker_marked   = { fg = "#6a9fb5", bg = "#6a9fb5" }
+marker_selected = { fg = "#478061", bg = "#478061" }
+marker_symbol   = "│"
+
+count_copied   = { fg = "#0f0f0f", bg = "#d7af5f" }
+count_cut      = { fg = "#0f0f0f", bg = "#cc6666" }
+count_selected = { fg = "#0f0f0f", bg = "#478061" }
+
+border_symbol = "│"
+border_style  = { fg = "#2a2a2a" }
+
+syntect_theme = ""
+
+[tabs]
+active   = { fg = "#0f0f0f", bg = "#478061", bold = true }
+inactive = { fg = "#555555", bg = "#1a1a1a" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#0f0f0f", bg = "#478061", bold = true }
+normal_alt  = { fg = "#478061", bg = "#1a1a1a" }
+select_main = { fg = "#0f0f0f", bg = "#d7af5f", bold = true }
+select_alt  = { fg = "#d7af5f", bg = "#1a1a1a" }
+unset_main  = { fg = "#0f0f0f", bg = "#cc6666", bold = true }
+unset_alt   = { fg = "#cc6666", bg = "#1a1a1a" }
+
+[indicator]
+parent  = { reversed = true }
+current = { fg = "#0f0f0f", bg = "#478061" }
+preview = { underline = true }
+padding = { open = "", close = "" }
+
+[status]
+overall   = {}
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+perm_sep   = { fg = "#333333" }
+perm_type  = { fg = "#6bc490" }
+perm_read  = { fg = "#d7af5f" }
+perm_write = { fg = "#cc6666" }
+perm_exec  = { fg = "#5ba7a0" }
+
+progress_label  = { bold = true }
+progress_normal = { fg = "#478061", bg = "#0f0f0f" }
+progress_error  = { fg = "#d7af5f", bg = "#cc6666" }
+
+[which]
+cols            = 3
+mask            = { bg = "#0f0f0f" }
+cand            = { fg = "#6bc490" }
+rest            = { fg = "#555555" }
+desc            = { fg = "#d4d4d4" }
+separator       = "  "
+separator_style = { fg = "#2a2a2a" }
+
+[confirm]
+border     = { fg = "#478061" }
+title      = { fg = "#6a9fb5" }
+body       = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+[spot]
+border   = { fg = "#478061" }
+title    = { fg = "#6a9fb5" }
+tbl_col  = { fg = "#6a9fb5" }
+tbl_cell = { fg = "#d7af5f", reversed = true }
+
+[notify]
+title_info  = { fg = "#6a9fb5" }
+title_warn  = { fg = "#d7af5f" }
+title_error = { fg = "#cc6666" }
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+[pick]
+border   = { fg = "#478061" }
+active   = { fg = "#6bc490", bold = true }
+inactive = {}
+
+[input]
+border   = { fg = "#478061" }
+title    = { fg = "#6a9fb5" }
+value    = { fg = "#d4d4d4" }
+selected = { reversed = true }
+
+[cmp]
+border   = { fg = "#478061" }
+active   = { fg = "#0f0f0f", bg = "#478061" }
+inactive = { fg = "#555555" }
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+[tasks]
+border  = { fg = "#478061" }
+title   = {}
+hovered = { fg = "#6bc490", bold = true }
+
+[help]
+on      = { fg = "#6bc490" }
+run     = { fg = "#5ba7a0" }
+desc    = { fg = "#d4d4d4" }
+hovered = { fg = "#0f0f0f", bg = "#478061", bold = true }
+footer  = { fg = "#0f0f0f", bg = "#478061" }
+
+[filetype]
+rules = [
+  { mime = "image/*",                                                                       fg = "#d7af5f" },
+  { mime = "{audio,video}/*",                                                               fg = "#a57fc4" },
+  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio}", fg = "#cc6666" },
+  { mime = "application/{pdf,doc,rtf}",                                                     fg = "#5ba7a0" },
+  { mime = "text/*",                                                                         fg = "#6a9fb5" },
+  { mime = "application/json",                                                               fg = "#6a9fb5" },
+  { url = "*", is = "orphan", bg = "#cc6666" },
+  { url = "*", is = "exec",   fg = "#6bc490" },
+  { url = "*/",               fg = "#6bc490" },
+]

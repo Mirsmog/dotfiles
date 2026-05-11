@@ -1,0 +1,143 @@
+/* ── Void · GNOME-panel style ─────────────────────────────────────
+   Full-width, blurred bg, flat modules — void palette
+   ──────────────────────────────────────────────────────────────── */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.6);
+    /*background: rgba(15, 15, 15, 0.55);*/
+    color: #d4d4d4;
+    border-bottom: 1px solid rgba(71, 128, 97, 0.14);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Workspaces ────────────────────────────────────────────────── */
+
+#workspaces {
+    padding: 0;
+}
+
+#workspaces button {
+    padding: 0 12px;
+    color: #333333;
+    background: transparent;
+    border-radius: 0;
+}
+
+#workspaces button:hover {
+    background: rgba(106, 159, 181, 0.10);
+    color: #6a9fb5;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.active {
+    color: #6bc490;
+    background: rgba(107, 196, 144, 0.10);
+    box-shadow: inset 0 -2px 0 #478061;
+}
+
+/* ── Clock ─────────────────────────────────────────────────────── */
+
+#clock {
+    color: #d4d4d4;
+    font-weight: 600;
+    padding: 0 14px;
+    letter-spacing: 0.5px;
+}
+
+/* ── System Stats ──────────────────────────────────────────────── */
+
+#cpu {
+    color: #d7af5f;
+    padding: 0 10px;
+}
+
+#memory {
+    color: #5ba7a0;
+    padding: 0 10px;
+}
+
+/* ── Separator ─────────────────────────────────────────────────── */
+
+#custom-sep {
+    color: #2a2a2a;
+    padding: 0 2px;
+    font-size: 15px;
+}
+
+/* ── Audio ─────────────────────────────────────────────────────── */
+
+#pulseaudio {
+    color: #a57fc4;
+    padding: 0 10px;
+}
+
+#pulseaudio.muted {
+    color: #333333;
+}
+
+/* ── Battery ───────────────────────────────────────────────────── */
+
+#battery {
+    color: #6bc490;
+    padding: 0 10px;
+}
+
+#battery.warning  { color: #d7af5f; }
+#battery.charging { color: #6bc490; }
+#battery.plugged  { color: #5ba7a0; }
+
+#battery.critical {
+    color: #cc6666;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.35; }
+}
+
+/* ── Tray ──────────────────────────────────────────────────────── */
+
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background: rgba(204, 102, 102, 0.15);
+}
+
+/* ── Tooltip ───────────────────────────────────────────────────── */
+
+tooltip {
+    background: rgba(15, 15, 15, 0.98);
+    border: 1px solid rgba(71, 128, 97, 0.22);
+    border-radius: 6px;
+    color: #d4d4d4;
+    font-size: 12px;
+}
+
+tooltip label {
+    color: #d4d4d4;
+}

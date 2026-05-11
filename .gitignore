@@ -1,0 +1,9 @@
+# Secrets - never commit these
+.secrets
+*.key
+*.pem
+dot_secrets*
+
+# Cache
+*.log
+.DS_Store

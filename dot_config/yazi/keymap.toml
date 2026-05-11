@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on   = "W"
+run  = 'shell "set-wallpaper $@"'
+desc = "Set as wallpaper"

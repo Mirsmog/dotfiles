@@ -1,0 +1,43 @@
+# Mako notification style - void theme
+
+# Position
+anchor=top-center
+margin=12
+
+# Size
+width=340
+height=120
+padding=16,16
+
+# Appearance
+background-color=#121212ee
+text-color=#e0e0e0
+border-size=1
+border-color=#478061
+border-radius=12
+
+# Font
+font=JetBrainsMono Nerd Font 11
+
+# Timeout (ms)
+default-timeout=5000
+
+# Icons
+icon-path=/usr/share/icons/Papirus-Dark
+max-icon-size=32
+
+# Sort newest on top
+sort=-time
+
+# Urgency styles
+[urgency=low]
+border-color=#3a3a3a
+default-timeout=3000
+
+[urgency=normal]
+border-color=#478061
+
+[urgency=high]
+border-color=#e06c75
+background-color=#1e1010ee
+default-timeout=0

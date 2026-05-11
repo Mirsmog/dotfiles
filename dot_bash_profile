@@ -1,0 +1,12 @@
+# Get aliases and functions
+[ -f $HOME/.bashrc ] && . $HOME/.bashrc
+
+# Autostart niri on tty1
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = "1" ] || [ "$(tty)" = "/dev/tty1" ]; then
+    export XDG_RUNTIME_DIR=/run/user/$(id -u)
+    export SEATD_SOCK=/run/seatd.sock
+    export MESA_LOADER_DRIVER_OVERRIDE=iris
+    mkdir -p "$XDG_RUNTIME_DIR"
+    chmod 700 "$XDG_RUNTIME_DIR"
+    exec dbus-run-session niri --session
+fi

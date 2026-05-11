@@ -1,0 +1,42 @@
+# Swaylock - void theme
+
+# Background
+color=0d0d0d
+
+# Hide typing indicator
+# indicator-radius=100
+indicator-radius=80
+indicator-thickness=8
+
+# Ring colors
+ring-color=478061
+ring-ver-color=478061
+ring-wrong-color=e06c75
+ring-clear-color=3a3a3a
+
+# Inside colors
+inside-color=121212
+inside-ver-color=1a2a22
+inside-wrong-color=2a1212
+inside-clear-color=1a1a1a
+
+# Line (separator between ring and inside)
+line-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+line-clear-color=00000000
+
+# Key highlight
+key-hl-color=478061
+bs-hl-color=e06c75
+
+# Text
+text-color=e0e0e0ff
+text-ver-color=478061ff
+text-wrong-color=e06c75ff
+text-clear-color=888888ff
+
+# Misc
+font=JetBrainsMono Nerd Font
+ignore-empty-password
+show-failed-attempts

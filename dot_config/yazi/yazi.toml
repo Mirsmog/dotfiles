@@ -1,0 +1,15 @@
+[mgr]
+ratio          = [1, 3, 5]
+sort_by        = "natural"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
+scrolloff      = 5
+
+[mgr.padding]
+top    = 0
+bottom = 0
+left   = 0
+right  = 0
